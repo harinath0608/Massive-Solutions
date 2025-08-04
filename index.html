@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions - Software Development & Training Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --dark: #0f172a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .partner-logo:hover {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+
+
+        /* Scroll Animation */
+        /* .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        } */
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* NEW: General card hover effect and transition */
+.card-hover-effect {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.card-hover-effect:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                background-color: white;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .scroll-container {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .scroll-content {
+                display: inline-block;
+                white-space: nowrap;
+                animation: scroll 10s linear infinite;
+                /* Adjust duration and direction as needed */
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                    /* Adjust for seamless looping with duplicated content */
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <h3 style="font-family:system-ui">Massive Solutions </h3>
+                    <!-- <img src="./assets/1.png"
+                        alt="TechNova Solutions logo featuring a blue abstract tech symbol with company name in modern sans-serif font"
+                        class="h-20"> -->
+                </div>
+
+                <div class="hamburger">
+                    <i class="fas fa-bars text-2xl text-gray-800"></i>
+                </div>
+
+                <nav class="nav-links">
+                    <ul class="flex space-x-8 md:flex-row">
+                        <li><a href="#home" class="text-gray-800 hover:text-blue-600 font-medium">Home</a></li>
+                        <li><a href="#services" class="text-gray-800 hover:text-blue-600 font-medium">Services</a></li>
+                        <li><a href="#training" class="text-gray-800 hover:text-blue-600 font-medium">Training</a></li>
+                        <li><a href="#partners" class="text-gray-800 hover:text-blue-600 font-medium">Partners</a></li>
+                        <li><a href="#testimonials"
+                                class="text-gray-800 hover:text-blue-600 font-medium">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 fade-in">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight"> Massive Solutions & AI Technology
+                    Training</h1>
+                <p class="text-xl mb-8 text-blue-100">Empowering businesses with cutting-edge software development and
+                    training the next generation of tech professionals.</p>
+                <div class="flex space-x-4">
+                    <a href="#services"
+                        class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Our
+                        Services</a>
+                    <a href="#training"
+                        class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">Explore
+                        Training</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/420415a2-3d17-4f92-bd8c-ce541f79f7d0.png"
+                    alt="Diverse team of professionals working together in a modern tech office with laptops and digital screens showing code and designs"
+                    class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+        <!-- Hiring Partners Section -->
+    <section id="partners" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Hiring Partners</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Leading companies that hire our graduates</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/accenture.png"
+                        alt="Blue tech company logo with abstract geometric symbol and company name"
+                        class="h-12 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Cognizant-Logo-500x281.png"
+                        alt="Green finance company logo with tree symbol representing growth"
+                        class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Deloitte_Logo.png"
+                        alt="Red e-commerce logo with shopping cart icon and bold typography"
+                        class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/HCL_Technologies-Logo.wine.png"
+                        alt="Purple cloud services logo with abstract cloud symbol" class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Logo_oracle.jpg"
+                        alt="Orange digital agency logo with creative paint stroke effect" class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Capgemini-Logo.wine.png"
+                        alt="Black and white consulting firm logo with minimalist design" class="h-20 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Mentors Section -->
+        <section id="mentors" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mentor Community</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our mentor community strongly believes in the power of sharing!
+We collaborate with professionals from great companies to guide you on this exciting journey.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Adobe-logo.svg.png"
+                        alt="Blue tech company logo with abstract geometric symbol and company name"
+                        class="h-12 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/amazon.png"
+                        alt="Green finance company logo with tree symbol representing growth"
+                        class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/Deloitte_Logo.png"
+                        alt="Red e-commerce logo with shopping cart icon and bold typography"
+                        class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/IIT delhi.jpeg"
+                        alt="Purple cloud services logo with abstract cloud symbol" class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/samsung.png"
+                        alt="Orange digital agency logo with creative paint stroke effect" class="h-20 object-contain">
+                </div>
+                <div class="partner-logo flex justify-center">
+                    <img src="./assets/texas university.png"
+                        alt="Black and white consulting firm logo with minimalist design" class="h-20 object-contain">
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Professional Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive digital solutions tailored to your business
+                    needs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- UI/UX Design -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> UI/UX Design </h3>
+                    <p class="text-gray-600 mb-4">Beautiful, intuitive interfaces designed to enhance user experience
+                        and drive engagement.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>User Research & Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Wireframing & Prototyping</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Interactive Design Systems</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- UI Development -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">App & Web Application Development </h3>
+                    <p class="text-gray-600 mb-4">Pixel-perfect implementation of designs with modern frameworks and
+                        best practices.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>React, Vue, Angular Implementation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Responsive Web Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Performance Optimization</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- MERN Stack -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-database text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Enterprise Applications </h3>
+                    <p class="text-gray-600 mb-4">Full-stack JavaScript solutions with MongoDB, Express, React, and
+                        Node.js.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Custom Web Applications</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>RESTful API Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Real-time Applications</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Python Full Stack -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fab fa-python text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> AI & ML Projects </h3>
+                    <p class="text-gray-600 mb-4">Powerful Ai with backend solutions with Django, Flask and frontend
+                        integration.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Django REST Framework</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Data Processing Pipelines</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>AI/ML Integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Graphic Design -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Digital Solutions </h3>
+                    <p class="text-gray-600 mb-4">Visually stunning designs that communicate your brand's message
+                        effectively.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Brand Identity Systems</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Print & Digital Marketing Materials</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Illustration & Iconography</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Video/Animation -->
+                <div
+                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-film text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> VFX & Media </h3>
+                    <p class="text-gray-600 mb-4">Engaging animations and video content that captivates your audience.
+                    </p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Explainer Videos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>2D/3D Animation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            <span>Video Editing & Post-production</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+<section class="py-16 gradient-bg text-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-6">
+                <div class="text-5xl font-bold mb-3 counter-number" data-target="500" data-suffix="+">0</div>
+                <div class="text-xl">Graduates Employed</div>
+            </div>
+            <div class="p-6">
+                <div class="text-5xl font-bold mb-3 counter-number" data-target="98" data-suffix="%">0</div>
+                <div class="text-xl">Job Placement Rate</div>
+            </div>
+            <div class="p-6">
+                <div class="text-5xl font-bold mb-3 counter-number" data-target="150" data-suffix="+">0</div>
+                <div class="text-xl">Satisfied Clients</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Training Programs Section -->
+<section id="training" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Training Programs</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive courses designed to launch your tech career</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
+                    <i class="fas fa-paint-brush text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Diploma In UI/UX </h3>
+                    <h5 style="color: #2563eb;"> CTC 5 - 15 LPA</h5>
+                    <p class="text-gray-600 mb-4">Job Ready & Long Term Certification, 8-weeks intensive program
+                        covering research, wireframing, prototyping, and UI design principles.</p>
+
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Figma</span>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Adobe
+                            XD</span>
+                        <span
+                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Sketch</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 2 months</span>
+                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                    <i class="fas fa-code text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> PG In MERN Stack Development </h3>
+                    <h5 style="color: #2563eb;"> CTC 6 - 18 LPA</h5>
+                    <p class="text-gray-600 mb-4">12-weeks program teaching MongoDB, Express, React, and Node.js to
+                        build full-stack applications.</p>
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium mr-2">MongoDB</span>
+                        <span
+                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Express</span>
+                        <span
+                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">React</span>
+                        <span
+                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium ml-2">Node.js</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 3 months</span>
+                        <a href="#" class="text-green-600 font-medium hover:text-green-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-yellow-500 to-yellow-700 flex items-center justify-center">
+                    <i class="fab fa-python text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Ai + Python Full Stack</h3>
+                    <h5 style="color: #2563eb;"> CTC 6 - 21 LPA</h5>
+                    <p class="text-gray-600 mb-4">12-week course covering Django, Flask, databases, and frontend
+                        integration with JavaScript.</p>
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Django</span>
+                        <span
+                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Flask</span>
+                        <span
+                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 3 months</span>
+                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> UI + React </h3>
+                    <h5 style="color: #2563eb;"> CTC 4 - 20 LPA</h5>
+                    <p class="text-gray-600 mb-4">8-week course focusing on modern HTML, CSS, JavaScript and
+                        frameworks like React. </p>
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mr-2">HTML5</span>
+                        <span
+                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mr-2">CSS3</span>
+                        <span
+                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                        <span
+                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">React</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 2 months</span>
+                        <a href="#" class="text-purple-600 font-medium hover:text-purple-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
+                    <i class="fas fa-palette text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Graphic & Video Editing Professional </h3>
+                    <h5 style="color: #2563eb;"> CTC 5 - 15 LPA</h5>
+                    <p class="text-gray-600 mb-4">10-week course covering typography, layout, color theory, and
+                        Adobe Creative Suite.</p>
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Photoshop</span>
+                        <span
+                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Illustrator</span>
+                        <span
+                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">InDesign</span>
+                        <span
+                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Adobe
+                            Premier Pro</span>
+                        <span
+                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">
+                            Adobe After Effects </span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 3 months</span>
+                        <a href="#" class="text-red-600 font-medium hover:text-red-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
+                <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center">
+                    <i class="fas fa-film text-white text-6xl"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Diploma in Multimedia - 2D & 3D </h3>
+                    <h5 style="color: #2563eb;"> CTC 5 - 25 LPA</h5>
+                    <p class="text-gray-600 mb-4">14-week program teaching After Effects, Premiere Pro, and video
+                        production fundamentals.</p>
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">After
+                            Effects</span>
+                        <span
+                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">Premiere
+                            Pro</span>
+                        <span
+                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">Cinema
+                            4D & Maya</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-500">Duration: 4 months</span>
+                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Students & Clients Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Success stories from our community</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/612d946c-46ce-49c5-add1-fc46422e5377.png"
+                                alt="Portrait of Sarah Johnson, a young female UI/UX designer smiling confidently"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-blue-600 text-sm">UI/UX Designer at TechCorp</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"The UI/UX Design Masterclass completely transformed my career.
+                        The practical projects and industry insights helped me land my dream job just 2 weeks after
+                        completing the program."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b2507a29-3610-4ba0-b602-6f279a3c3c3d.png"
+                                alt="Portrait of Mark Davis, a mid-career professional looking thoughtful with glasses"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Mark Davis</h4>
+                            <p class="text-blue-600 text-sm">CEO, Digital Solutions Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"We've hired three graduates from TechNova's MERN stack
+                        program, and they've all been exceptional. The training produces developers who can hit the
+                        ground running with real-world projects."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9d4f4d9f-7bb0-4161-8c90-4eab8404b550.png"
+                                alt="Portrait of Priya Patel, a young graduate smiling proudly in professional attire"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Priya Patel</h4>
+                            <p class="text-blue-600 text-sm">Python Developer at DataWorks</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"Coming from an economics background, I never thought I could
+                        become a developer. The Python Full Stack course gave me all the skills I needed, plus career
+                        support that helped me land a great position."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row of Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1ac25daf-42e1-44f5-85c2-9c0fb9d84d38.png"
+                                alt="Portrait of Alex Chen, a motion graphics artist with creative hairstyle smiling"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Alex Chen</h4>
+                            <p class="text-blue-600 text-sm">Motion Designer at MediaPlus</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"The Motion Graphics course was incredibly comprehensive. We
+                        learned not just the tools but the principles behind great animation. I now lead a creative team
+                        at a top agency."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/26869ad1-ed60-485f-821d-a48fafca5e11.png"
+                                alt="Portrait of Jamal Williams, a senior developer smiling confidently"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Jamal Williams</h4>
+                            <p class="text-blue-600 text-sm">Senior UI Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"After 6 months of self-teaching with mixed results, the UI
+                        Development Intensive gave me the structured learning path I needed. The portfolio projects were
+                        key to getting interviews."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0b713f21-87bd-4aaf-b8b3-82b7d822f31d.png"
+                                alt="Portrait of Rachel Green, a creative director with stylish glasses looking professional"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Rachel Green</h4>
+                            <p class="text-blue-600 text-sm">Creative Director, BrandHouse</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-5">"We've partnered with TechNova for both custom software
+                        solutions and hiring talent. Their team delivers exceptional quality and their graduates are
+                        among the best-prepared we've seen."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white ">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
+                    <p class="text-gray-600">Have questions about our services or training programs? Reach out to us.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden ">
+                    <div class="md:flex ">
+                        <div class="md:w-1/2 p-8 ">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-6">Contact Information</h3>
+
+                            <div class="flex items-start mb-6 " >
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 ">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Address</h4>
+                                    <p class="text-gray-600">2871 Speedway, Austin, TX 78715,  <br> United States </p>
+                                    <p class="text-gray-600"> ............................................................................. </p>
+                                    <p class="text-gray-600"> 1-412 JNTU, Hyderabad, 500085  <br> India </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start mb-6">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600"> For US : +1 (555) 123-4567 <br>  For India: +91-9177059193 </p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start mb-6">
+                                <div
+                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600"> massivesolutions@gmail.com </p>
+                                </div>
+                            </div>
+
+                            <!-- <div class="mt-10">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h3>
+                                <div class="flex space-x-4">
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition duration-300">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition duration-300">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition duration-300">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#"
+                                        class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition duration-300">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <!-- <div class="md:w-1/2 bg-white p-8">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-6">Send Us a Message</h3>
+
+                            <form>
+                                <div class="mb-4">
+                                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Your
+                                        Name</label>
+                                    <input type="text" id="name"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email
+                                        Address</label>
+                                    <input type="email" id="email"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="subject"
+                                        class="block text-gray-700 text-sm font-medium mb-2">Subject</label>
+                                    <select id="subject"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                        <option value="">Select a subject</option>
+                                        <option value="training">Training Programs</option>
+                                        <option value="services">Professional Services</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="careers">Careers</option>
+                                        <option value="other">Other Inquiry</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="message"
+                                        class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                                    <textarea id="message" rows="4"
+                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Send
+                                    Message</button>
+                            </form>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="mb-8 md:mb-0">
+                     <h3 style="font-family:system-ui">Massive Solutions </h3>
+                    <!-- <img src="./assets/ms.png"
+                        alt="TechNova Solutions logo in white version on dark background" class="h-12 mb-4"> -->
+                    <p class="text-gray-400 mb-4"> Massive Solutions and technology training for the digital
+                        age.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#training" class="text-gray-400 hover:text-white">Training Programs</a></li>
+                        <li><a href="#partners" class="text-gray-400 hover:text-white">Hiring Partners</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Training Programs</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">UI Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">MERN Stack</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Python Full Stack</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Graphic Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Motion Graphics</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
+                            <span class="text-gray-400">2871 Speedway, Austin, TX 78715 , United States </span>
+                        
+                            <span class="text-gray-400">1-412 JNTU, Hyderabad, India </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-gray-400 mr-2 mt-1"></i>
+                            <span class="text-gray-400"> For US: +1 (555) 123-4567 <br> For India : +91-9177059193 </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-gray-400 mr-2 mt-1"></i>
+                            <span class="text-gray-400">massivesolutions@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Massive Solutions. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+     
+    document.addEventListener('DOMContentLoaded', () => {
+        const counterNumbers = document.querySelectorAll('.counter-number');
+        const animationDuration = 2000; // milliseconds (2 seconds)
+        const frameDuration = 1000 / 60; // approximately 60 frames per second
+
+        const animateCounter = (entry) => {
+            if (entry.isIntersecting) {
+                // If the section is visible, start the animation
+                const counterElement = entry.target;
+                const targetValue = parseInt(counterElement.getAttribute('data-target'));
+                const suffix = counterElement.getAttribute('data-suffix') || ''; // Get suffix or empty string
+                const startValue = 0;
+                let startTime = null;
+
+                const updateCount = (currentTime) => {
+                    if (!startTime) startTime = currentTime;
+                    const progress = (currentTime - startTime) / animationDuration;
+
+                    if (progress < 1) {
+                        const currentValue = Math.min(targetValue, startValue + progress * (targetValue - startValue));
+                        counterElement.textContent = Math.floor(currentValue) + suffix;
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        // Ensure the final value is exactly the target
+                        counterElement.textContent = targetValue + suffix;
+                        // Stop observing once animation is done
+                        observer.unobserve(counterElement);
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            }
+        };
+
+        // Create an Intersection Observer to trigger animation when section is in view
+        const observerOptions = {
+            root: null, // relative to the viewport
+            rootMargin: '0px',
+            threshold: 0.5 // trigger when 50% of the element is visible
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry);
+                }
+            });
+        }, observerOptions);
+
+        // Observe each counter element
+        counterNumbers.forEach(counter => {
+            observer.observe(counter);
+        });
+    });
+</script>
+
+</body>
+
+</html>
