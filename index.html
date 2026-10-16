@@ -1,1056 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massive Mission Skills - Software Development & Training Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-        :root {
-            --primary: #0ea04b;
-            --secondary: #057a0e;
-            --accent: #3b82f6;
-            --light: #f8fafc;
-            --dark: #0f172a;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .testimonial-card {
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: scale(1.03);
-        }
-
-        .partner-logo {
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-
-        .partner-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-
-
-        /* Scroll Animation */
-        /* .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        } */
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* NEW: General card hover effect and transition */
-.card-hover-effect {
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-
-.card-hover-effect:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                background-color: white;
-                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .scroll-container {
-                width: 100%;
-                overflow: hidden;
-            }
-
-            .scroll-content {
-                display: inline-block;
-                white-space: nowrap;
-                animation: scroll 10s linear infinite;
-                /* Adjust duration and direction as needed */
-            }
-
-            @keyframes scroll {
-                0% {
-                    transform: translateX(0);
-                }
-
-                100% {
-                    transform: translateX(-100%);
-                    /* Adjust for seamless looping with duplicated content */
-                }
-            }
-
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Massive Mission Solutions: Learn. Engineer. Build What Matters.</title>
+<meta name="description" content="AI Engineering and Software Engineering training, plus AI solutions for businesses, from Massive Mission Solutions.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F8FD;--ink:#0A1033;--mute:#4B5578;--line:#D8DEEE;--green:#2447E0;--soft:#EAEFFB;--on:#FFFFFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#080D22;--ink:#EEF2FF;--mute:#A4AFD0;--line:#222C52;--green:#4DD6E8;--soft:#0E1633;--on:#080D22}}
+:root[data-theme="dark"]{--bg:#080D22;--ink:#EEF2FF;--mute:#A4AFD0;--line:#222C52;--green:#4DD6E8;--soft:#0E1633;--on:#080D22}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0 0 1em;max-width:68ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.05rem "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:8px 10px;text-decoration:none;font-size:.92rem;font-weight:500;color:var(--mute);border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{color:var(--ink);border-color:var(--green)}
+#menu{display:none;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 12px;font:inherit;border-radius:6px}
+@media(max-width:900px){#menu{display:block}nav{display:none;width:100%}nav.open{display:block}.bar{flex-wrap:wrap;padding:10px 0}nav ul{flex-direction:column;padding-bottom:10px}}
+.dd{position:relative}
+.dd>button{display:flex;align-items:center;gap:8px;padding:8px 10px;background:none;border:0;border-bottom:2px solid transparent;font:500 .92rem "IBM Plex Sans",sans-serif;color:var(--mute);cursor:pointer}
+.dd>button::after{content:"";width:6px;height:6px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
+.dd>button:hover,.dd>button.on,.dd.open>button{color:var(--ink);border-color:var(--green)}
+.dd .sub{display:none;position:absolute;top:100%;left:0;min-width:210px;flex-direction:column;gap:0;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:6px;z-index:6}
+.dd.open .sub{display:flex}
+@media(hover:hover) and (min-width:901px){.dd:hover .sub{display:flex}}
+@media(max-width:900px){.dd>button{width:100%;justify-content:space-between}.dd .sub{position:static;border:0;padding:0 0 0 14px}}
+section{padding:72px 0}
+.alt{background:var(--soft)}
+.btn{display:inline-block;padding:13px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--ink);margin:0 10px 10px 0;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn.p{background:var(--ink);color:var(--bg)}
+.btn:hover{border-color:var(--green)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+.lead{font-size:1.15rem;color:var(--mute)}
+.rows>*{padding:22px 0 22px 20px;border-left:3px solid var(--line);margin-bottom:6px}
+.rows>*:hover{border-color:var(--green)}
+.rows h3{margin-bottom:.3em}.rows p{margin:0;color:var(--mute)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;padding:2px 10px;border:1px solid var(--green);color:var(--green);border-radius:99px;margin-bottom:8px}
+.tag.n{border-color:var(--mute);color:var(--mute)}
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px}
+ol.steps li{counter-increment:s;border-top:3px solid var(--green);padding-top:10px}
+ol.steps li::before{content:counter(s);font:700 1.4rem "Bricolage Grotesque";color:var(--green);display:block}
+ul.chk{padding-left:1.1em}ul.chk li{margin-bottom:.4em}
+.note{border-left:4px solid var(--green);background:var(--soft);padding:14px 18px;color:var(--mute);max-width:68ch}
+.alt .note{background:var(--bg)}
+label{display:block;font-weight:600;margin:16px 0 6px}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--mute);border-radius:6px;background:var(--bg);color:var(--ink);font:inherit}
+.err{color:#B3261E;font-size:.9rem;min-height:1.2em;margin:4px 0 0}
+@media(prefers-color-scheme:dark){.err{color:#FF8A80}}
+details{border-bottom:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:600}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mute);font-size:.95rem}
+footer .grid{gap:20px}footer a{display:block;text-decoration:none;padding:2px 0}
+.flow{stroke-dasharray:6 6;animation:d 1.6s linear infinite}
+@keyframes d{to{stroke-dashoffset:-24}}
+@media(prefers-reduced-motion:reduce){.flow{animation:none}}
+header{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
+.dark{--g2:#4DD6E8;background:radial-gradient(800px 420px at 85% 15%,rgba(124,77,255,.3),transparent 70%),#070C24;color:#EEF2FF;padding:64px 0}
+.dark .lead{color:#B8C2D6}
+.dark h1 .g{color:var(--g2)}
+.dark .btn{border-color:#F2EFE6;color:#F2EFE6}
+.dark .btn.p{background:var(--g2);border-color:var(--g2);color:#06121F}
+.dark .btn:hover{border-color:#fff}
+.term{font:500 .9rem ui-monospace,Menlo,Consolas,monospace;color:var(--g2);margin-bottom:16px}
+.term::after{content:"▍";margin-left:4px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+#net{width:100%;height:420px;display:block;cursor:crosshair}
+@media(max-width:860px){#net{height:300px}}
+.rows{perspective:900px}
+.rows>*{border-radius:0 12px 12px 0;padding-right:16px;transition:transform .25s,background .25s,box-shadow .25s}
+.rows>*:hover{transform:translateY(-4px) rotateX(4deg);background:var(--soft);box-shadow:0 12px 24px -12px rgba(14,27,51,.35)}
+.alt .rows>*:hover{background:var(--bg)}
+.btn{transition:transform .2s}.btn:hover{transform:translateY(-2px)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.term::after{animation:none}.rows>*:hover{transform:none}.rv{opacity:1;transform:none}}
+.sr{position:absolute;left:-999px}.sr:focus{left:8px;top:8px;background:var(--bg);padding:8px;z-index:9}
+</style>
 </head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header><div class="wrap bar">
+<a class="brand" href="#/" aria-label="Massive Mission Solutions home">
+<svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="1" y="1" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 22V8l8 9 8-9v14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><circle cx="15" cy="17" r="2.6" style="fill:var(--green)"/></svg>
+Massive Mission Solutions</a>
+<button id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main"><ul id="navlist"></ul></nav>
+</div></header>
+<main id="main" tabindex="-1"></main>
+<footer><div class="wrap grid">
+<div><strong>Massive Mission Solutions</strong><br>Learn. Engineer. Build What Matters.</div>
+<div id="foot"></div>
+<div>Email: <a id="mail" href="#"></a><br>Programs, fees and policies are published on each page before enrolment.</div>
+</div></footer>
 
-<body class="bg-gray-50">
-    <!-- Header/Navigation -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <h3 style="font-family:system-ui">Massive Mission Skills </h3>
-                    <!-- <img src="./assets/1.png"
-                        alt="TechNova Solutions logo featuring a blue abstract tech symbol with company name in modern sans-serif font"
-                        class="h-20"> -->
-                </div>
+<script>
+/* ===== EDITABLE CONTENT: change values here; pages rebuild automatically ===== */
+const SITE={whatsapp:"919177059193",email:"hr@massivemissionskills.com",divisions:{academy:"Massive Mission Academy",labs:"Massive Mission Labs"}};
+const TBC='To be confirmed before launch';
+const PROGRAMS={
+ ai:{title:"AI Engineering",tag:"Learn to design and build AI-powered applications.",
+  topics:["Python for AI work","Machine learning basics","Generative AI and prompting","LLM applications","Retrieval-augmented generation (RAG)","AI agents and tool use","Evaluation and testing","Deployment and monitoring"],
+  projects:["A document Q&A assistant with cited sources","An evaluation harness that scores answers against a test set","A tool-using agent with logging and guardrails"],
+  outcomes:["Build and deploy a small LLM application end to end","Measure answer quality instead of guessing","Explain the limits and risks of your system"],
+  prereq:"Basic programming in any language and comfort with the command line.",tools:["Python","Jupyter","LLM APIs","Vector databases","Git and GitHub","Docker basics"],who:"Programmers and technical learners who want to build LLM applications."},
+ sde:{title:"Software Engineering",tag:"Develop the fundamentals required to build reliable software.",
+  topics:["Programming fundamentals","Data structures and algorithms","React and front-end development","Backend development","Databases","APIs","Testing","System design","GitHub workflow","Deployment","AI-assisted development"],
+  projects:["A REST API with a database and automated tests","A React app that consumes your own API","A code review exercise on a real pull request"],
+  outcomes:["Ship a tested, deployed full-stack application","Work in a Git-based team workflow","Reason about trade-offs in simple system designs"],
+  prereq:"No prior experience required. Willingness to practise weekly.",tools:["JavaScript or Python","React","Backend frameworks","SQL databases","REST APIs","Git and GitHub","Testing frameworks"],who:"Beginners, students and career switchers who want solid engineering foundations."}
+};
+const ROADMAP=["Programming basics","Data structures and algorithms","Databases and APIs","React and backend","Testing and GitHub","System design and deployment"];
+const SERVICES=[
+ ["AI application development","Teams need a working AI feature, not a demo.","Prototype first, then harden with tests and monitoring.","Working application, source code, documentation."],
+ ["Business workflow automation","Repeated manual steps slow staff down.","Map the workflow, automate the stable parts, keep a human check where errors are costly.","Automated workflow, runbook, handover session."],
+ ["Knowledge assistants","Answers are buried in documents.","RAG over approved sources with citations and access control.","Assistant, evaluation report, content update process."],
+ ["AI agents","Multi-step tasks need tools and decisions.","Narrow scope, explicit tools, logging and fallbacks.","Agent, test scenarios, safety limits document."],
+ ["Intelligent search","Keyword search misses meaning.","Hybrid keyword and semantic search with relevance testing.","Search service, relevance test set."],
+ ["SaaS development","A product idea needs an engineering team.","Incremental delivery with working releases.","Deployed product, repository, documentation."],
+ ["AI integrations","Existing systems need AI capabilities.","API-first integration with fallbacks and privacy review.","Integration, tests, monitoring."]
+];
+const PROCESS=["Discovery","Feasibility","Prototype","Development","Testing","Deployment","Maintenance"];
+const PROJECTS=[
+ {status:"Concept demonstration",name:"Document Q&A reference architecture",problem:"Staff cannot find answers across policy documents.",arch:"Ingest, chunk, embed, retrieve, generate with citations.",tools:"Python, a vector index, an LLM API.",testing:"Planned: a question set with expected sources.",limits:"Concept only. No production data and no measured results yet.",outcome:"None claimed."}
+];
+const TEAM=[{name:"Founder / Lead Engineer",role:"Profile to be added",bio:"Add real experience, projects and links here."},{name:"Instructor",role:"Profile to be added",bio:"Add real teaching and industry background here."}];
+const ARTICLES=[["How to evaluate a RAG system before trusting it","Why a small test set beats intuition."],["Choosing between a workflow and an agent","When fixed steps are the safer design."],["Testing habits every new engineer needs","Small tests that catch real bugs."]];
+const FAQ=[["Do you guarantee jobs or salaries?","No. We teach skills and show your work. We do not promise placements."],["What are the fees and refund terms?","Published on each program page before enrolment. "+TBC+"."],["Do you work with confidential data?","Only under a written agreement. Privacy and access are discussed in discovery."]];
+const ROUTES={"/":"Home","/ai-engineering":"AI Engineering","/sde":"SDE Training","/ai-solutions":"AI Solutions","/projects":"Projects","/about":"About","/insights":"Insights","/contact":"Contact"};
 
-                <div class="hamburger">
-                    <i class="fas fa-bars text-2xl text-gray-800"></i>
-                </div>
+/* ===== helpers ===== */
+const $=s=>document.querySelector(s);
+const li=a=>a.map(x=>`<li>${x}</li>`).join("");
+const sec=(h,b,alt)=>`<section class="${alt?'alt':''}"><div class="wrap"><h2>${h}</h2>${b}</div></section>`;
+const cta=(t,h,p)=>`<a class="btn ${p?'p':''}" href="${h}">${t}</a>`;
+const closer=(t,btn,h)=>sec(t,`<p class="lead">Tell us where you are and we will reply with a clear next step.</p>${cta(btn,h,1)}`,1);
 
-                <nav class="nav-links">
-                    <ul class="flex space-x-8 md:flex-row">
-                        <li><a href="#home" class="text-gray-800 hover:text-blue-600 font-medium">Home</a></li>
-                        <li><a href="#services" class="text-gray-800 hover:text-blue-600 font-medium">Services</a></li>
-                        <li><a href="#training" class="text-gray-800 hover:text-blue-600 font-medium">Training</a></li>
-                        <li><a href="#partners" class="text-gray-800 hover:text-blue-600 font-medium">Partners</a></li>
-                        <li><a href="#testimonials"
-                                class="text-gray-800 hover:text-blue-600 font-medium">Testimonials</a></li>
-                        <li><a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+function arch(){return `<svg viewBox="0 0 440 340" role="img" aria-label="Architecture of a retrieval-augmented AI assistant: documents flow through an index and retriever to a language model, then to an answer with citations, with an evaluation loop." style="width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:var(--soft)">
+<g font-family="IBM Plex Sans,sans-serif" font-size="13" fill="currentColor" stroke="currentColor">
+<g fill="none" stroke-width="1.5"><rect x="20" y="30" width="110" height="46" rx="4"/><rect x="165" y="30" width="110" height="46" rx="4"/><rect x="310" y="30" width="110" height="46" rx="4"/><rect x="20" y="150" width="110" height="46" rx="4"/><rect x="165" y="150" width="110" height="46" rx="4" style="stroke:var(--green)" stroke-width="2.5"/><rect x="310" y="150" width="110" height="46" rx="4"/><rect x="165" y="265" width="110" height="46" rx="4"/></g>
+<g style="stroke:var(--green)" stroke-width="2" fill="none" class="flow"><path d="M130 53H165M275 53H310M365 76V150M310 173H275M165 173H130M220 196V265"/></g>
+<g stroke="none"><text x="75" y="58" text-anchor="middle">Documents</text><text x="220" y="58" text-anchor="middle">Chunk + embed</text><text x="365" y="58" text-anchor="middle">Index</text><text x="75" y="178" text-anchor="middle">Answer + cites</text><text x="220" y="178" text-anchor="middle">LLM</text><text x="365" y="178" text-anchor="middle">Retriever</text><text x="220" y="293" text-anchor="middle">Evaluation set</text></g></g></svg>`}
 
-    <!-- Hero Section -->
-    <section id="home" class="gradient-bg text-white py-20 fade-in">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight"> Massive Solutions & AI Technology
-                    Training</h1>
-                <p class="text-xl mb-8 text-blue-100">Empowering businesses with cutting-edge software development and
-                    training the next generation of tech professionals.</p>
-                <div class="flex space-x-4">
-                    <a href="#services"
-                        class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Our
-                        Services</a>
-                    <a href="#training"
-                        class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">Explore
-                        Training</a>
-                </div>
-            </div>
-            <div class="md:w-1/2">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/420415a2-3d17-4f92-bd8c-ce541f79f7d0.png"
-                    alt="Diverse team of professionals working together in a modern tech office with laptops and digital screens showing code and designs"
-                    class="rounded-lg shadow-xl">
-            </div>
-        </div>
-    </section>
+/* ===== pages ===== */
+function program(k){const p=PROGRAMS[k];return `
+<section><div class="wrap"><h1>${p.title} Training</h1><p class="lead">${p.tag}</p>${cta("Ask about enrolment","#/contact?topic="+encodeURIComponent(p.title),1)}</div></section>
+${sec("Curriculum",`<ul class="chk">${li(p.topics)}</ul>`,1)}
+${sec("Who it is for, and tools",`<p>${p.who}</p><p><strong>Tools you will use</strong></p><div>${p.tools.map(t=>`<span class="tag n">${t}</span> `).join("")}</div>`)}
+${k=="sde"?sec("Learning roadmap",`<ol class="steps">${li(ROADMAP)}</ol>`):""}
+${sec(k=="sde"?"Practical assignments":"Project examples",`<ul class="chk">${li(p.projects)}</ul>`,k!="sde")}
+${sec("Learning outcomes",`<ul class="chk">${li(p.outcomes)}</ul>`,k=="sde")}
+${sec("Program details",`<div class="rows"><div><h3>Prerequisites</h3><p>${p.prereq}</p></div><div><h3>Format, duration, fees, refunds</h3><p>${TBC}. These will be listed here in full before enrolment opens.</p></div><div><h3>Instructors</h3><p>See <a href="#/about">About</a> for real profiles.</p></div><div><h3>Assessment and support</h3><p>${TBC}.</p></div></div><p class="note">We do not guarantee jobs, salaries or business outcomes.</p>`,k!="sde")}
+${closer("Ready to start?","Contact us","#/contact?topic="+encodeURIComponent(p.title))}`}
 
-        <!-- Hiring Partners Section -->
-    <section id="partners" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Hiring Partners</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Leading companies that hire our graduates</p>
-            </div>
+const PAGES={
+"/":()=>`
+<section class="dark"><div class="wrap hero"><div><p class="term">$ mms init --ai --engineers</p><h1>Building Engineers. Engineering <span class="g">Intelligent</span> Solutions.</h1>
+<p class="lead">Massive Mission Solutions helps aspiring engineers develop practical AI and software development skills while helping businesses build technology that solves meaningful problems.</p>
+${cta("Explore Training Programs","#/ai-engineering",1)}${cta("Build With Us","#/ai-solutions")}</div><canvas id="net" role="img" aria-label="Rotating 3D network of connected nodes"></canvas></div></section>
+${sec("Inside an AI assistant",`<p>The pattern behind many knowledge assistants: find the right documents, let the model answer from them, then test the result.</p><div style="max-width:560px">${arch()}</div>`)}
+${sec("Three pathways",`<div class="rows grid">
+<div><h3>AI Engineering</h3><p>Learn to design and build AI-powered applications.</p><p><a href="#/ai-engineering">Explore AI Engineering</a></p></div>
+<div><h3>Software Engineering</h3><p>Develop the fundamentals required to build reliable software.</p><p><a href="#/sde">Explore SDE Training</a></p></div>
+<div><h3>AI Solutions</h3><p>Work with an engineering team to turn business challenges into practical technology.</p><p><a href="#/ai-solutions">Discuss Your AI Project</a></p></div></div>`,1)}
+${sec("Our principles",`<div class="rows grid">${["Practical engineering over theory alone.","Transparent learning expectations.","Technology chosen to solve real problems.","Responsible and secure AI development.","Clear communication and measurable deliverables.","Continuous improvement through testing and feedback."].map(x=>`<div><p style="color:var(--ink)">${x}</p></div>`).join("")}</div><p class="note">These are the standards we hold ourselves to. We publish evidence on the <a href="#/projects">Projects</a> page rather than claims.</p>`)}
+${sec("Who we serve",`<div class="rows grid"><div><h3>Students and graduates</h3><p>Build a project portfolio that shows real skills.</p></div><div><h3>Career switchers</h3><p>Learn software and AI fundamentals step by step.</p></div><div><h3>Working engineers</h3><p>Add LLM application, RAG and evaluation skills to what you already know.</p></div><div><h3>Businesses</h3><p>Get engineering help to prototype and ship AI features.</p></div></div>`,1)}
+${sec("How learning works",`<ol class="steps"><li><strong>Choose a path</strong><br>AI Engineering or Software Engineering.</li><li><strong>Learn by building</strong><br>Every topic ends in a working project.</li><li><strong>Get feedback</strong><br>Code review and clear assessment criteria.</li><li><strong>Show your work</strong><br>Publish projects and repositories you can explain.</li></ol>`)}
+${sec("Real Engineering. Practical Impact.",`<p>Every project is labelled as client work, internal project, prototype or concept, and shows its limits.</p>${cta("See projects","#/projects",1)}`,1)}`,
+"/ai-engineering":()=>program("ai"),
+"/sde":()=>sdePage(),
+"/ai-solutions":()=>`
+<section><div class="wrap"><h1>AI Solutions from ${SITE.divisions.labs}</h1><p class="lead">Practical AI and software engineering for business problems. Services listed are the capabilities we plan to offer; confirm availability for your project.</p>${cta("Discuss Your AI Project","#/contact?topic=AI%20Solutions",1)}</div></section>
+${sec("What we build",`<div class="rows">${SERVICES.map(s=>`<div><h3>${s[0]}</h3><p><strong>Problem:</strong> ${s[1]}<br><strong>Approach:</strong> ${s[2]}<br><strong>Deliverables:</strong> ${s[3]}</p></div>`).join("")}</div>`,1)}
+${sec("Technologies we work with",`<div>${["Python","TypeScript and React","LLM APIs","Vector search","SQL and NoSQL databases","Cloud deployment","Automated testing"].map(t=>`<span class="tag n">${t}</span> `).join("")}</div><p class="note" style="margin-top:20px">We choose tools per project. Sometimes the right answer is not AI at all.</p>`)}
+${sec("What you can expect",`<ul class="chk"><li>Written scope and deliverables before work starts.</li><li>Working demos at each stage.</li><li>Your data handled under agreed access rules.</li><li>Known limitations documented, not hidden.</li></ul>`,1)}
+${sec("How an engagement runs",`<ol class="steps">${li(PROCESS)}</ol><p style="margin-top:24px" class="note">Data privacy: we agree what data is used, where it is stored and who can access it during discovery, before any build.</p>`)}
+${closer("Have a problem worth solving?","Start a conversation","#/contact?topic=AI%20Solutions")}`,
+"/projects":()=>`
+<section><div class="wrap"><h1>Real Engineering. Practical Impact.</h1><p class="lead">Each entry shows the problem, architecture, tools, testing, limits and verified outcomes. We never publish confidential work or invent results.</p></div></section>
+${sec("Projects",`<div class="rows">${PROJECTS.map(p=>`<div><span class="tag ${p.status.startsWith('Concept')||p.status=='Prototype'?'n':''}">${p.status}</span><h3>${p.name}</h3><p><strong>Problem:</strong> ${p.problem}<br><strong>Architecture:</strong> ${p.arch}<br><strong>Tools:</strong> ${p.tools}<br><strong>Testing:</strong> ${p.testing}<br><strong>Limitations:</strong> ${p.limits}<br><strong>Verified outcomes:</strong> ${p.outcome}</p></div>`).join("")}</div><p class="note">Add completed work to PROJECTS in the script with its real status, repository link and demo link.</p>`,1)}
+${closer("Want to see more or start a project?","Contact us","#/contact?topic=Projects")}`,
+"/about":()=>`
+<section><div class="wrap"><h1>About Massive Mission Solutions</h1><p class="lead">We develop engineering skills and build intelligent technology for real-world problems.</p></div></section>
+${sec("Two parts, one standard",`<div class="rows"><div><h3>${SITE.divisions.academy}</h3><p>AI Engineering and Software Engineering training.</p></div><div><h3>${SITE.divisions.labs}</h3><p>AI solutions for businesses.</p></div></div><p class="note">Academy and Labs are proposed section names and can be changed in SITE.divisions.</p>`,1)}
+${sec("Mission",`<p class="lead">We develop engineering skills and build intelligent technology for real-world problems.</p><p>People learn engineering by building, and businesses benefit most from AI that is tested, explained and maintained. Our training and our client work share the same habits: clear scope, working software and honest limits.</p>`)}
+${sec("Team",`<div class="rows grid">${TEAM.map(t=>`<div><h3>${t.name}</h3><p><strong>${t.role}</strong><br>${t.bio}</p></div>`).join("")}</div>`)}
+${sec("FAQ",FAQ.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join(""),1)}
+${closer("Questions?","Contact us","#/contact")}`,
+"/insights":()=>`
+<section><div class="wrap"><h1>Technical Insights</h1><p class="lead">Notes on building, testing and teaching AI and software engineering.</p></div></section>
+${sec("Articles",`<div class="rows">${ARTICLES.map(a=>`<div><h3>${a[0]}</h3><p>${a[1]} <span class="tag n">Draft topic</span></p></div>`).join("")}</div>`,1)}
+${sec("Topics we cover",`<div>${["LLM applications","RAG and search","Evaluation and testing","AI agents","Software engineering basics","Responsible AI"].map(t=>`<span class="tag">${t}</span> `).join("")}</div>`)}
+${closer("Want an article on a topic?","Send a suggestion","#/contact?topic=Insights")}`,
+"/contact":()=>{const t=decodeURIComponent((location.hash.split("topic=")[1]||""));return `
+<section><div class="wrap"><h1>Contact Us</h1><p class="lead">Tell us what you want to learn or build. Your message opens in WhatsApp, ready to send.</p>
+<form id="f" novalidate style="max-width:560px">
+<label for="n">Name</label><input id="n" autocomplete="name"><p class="err" id="e1"></p>
+<label for="e">Email</label><input id="e" type="email" autocomplete="email"><p class="err" id="e2"></p>
+<label for="t">Topic</label><select id="t">${["AI Engineering","Software Engineering","AI Solutions","Projects","Insights","Other"].map(o=>`<option ${o==t?'selected':''}>${o}</option>`).join("")}</select>
+<label for="m">Message</label><textarea id="m" rows="5"></textarea><p class="err" id="e3"></p>
+<button class="btn p" type="submit">Send on WhatsApp</button><p id="ok" role="status" class="note" hidden></p>
+</form><p>Or WhatsApp <a href="https://wa.me/${SITE.whatsapp}" target="_blank" rel="noopener">+91 91770 59193</a>, or email <a href="mailto:${SITE.email}">${SITE.email}</a>.</p>
+<h2 style="margin-top:40px">What happens next</h2><ol class="steps"><li>We read your message.</li><li>We reply on WhatsApp or email with questions or next steps.</li><li>For projects, we set up a discovery call.</li><li>For training, we share program details and policies.</li></ol></div></section>`}
+};
 
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/accenture.png"
-                        alt="Blue tech company logo with abstract geometric symbol and company name"
-                        class="h-12 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Cognizant-Logo-500x281.png"
-                        alt="Green finance company logo with tree symbol representing growth"
-                        class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Deloitte_Logo.png"
-                        alt="Red e-commerce logo with shopping cart icon and bold typography"
-                        class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/HCL_Technologies-Logo.wine.png"
-                        alt="Purple cloud services logo with abstract cloud symbol" class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Logo_oracle.jpg"
-                        alt="Orange digital agency logo with creative paint stroke effect" class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Capgemini-Logo.wine.png"
-                        alt="Black and white consulting firm logo with minimalist design" class="h-20 object-contain">
-                </div>
-            </div>
-        </div>
-    </section>
-
-     <!-- Mentors Section -->
-        <section id="mentors" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mentor Community</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Our mentor community strongly believes in the power of sharing!
-We collaborate with professionals from great companies to guide you on this exciting journey.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Adobe-logo.svg.png"
-                        alt="Blue tech company logo with abstract geometric symbol and company name"
-                        class="h-12 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/amazon.png"
-                        alt="Green finance company logo with tree symbol representing growth"
-                        class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/Deloitte_Logo.png"
-                        alt="Red e-commerce logo with shopping cart icon and bold typography"
-                        class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/IIT delhi.jpeg"
-                        alt="Purple cloud services logo with abstract cloud symbol" class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/samsung.png"
-                        alt="Orange digital agency logo with creative paint stroke effect" class="h-20 object-contain">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="./assets/texas university.png"
-                        alt="Black and white consulting firm logo with minimalist design" class="h-20 object-contain">
-                </div>
-            
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Professional Services</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive digital solutions tailored to your business
-                    needs</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- UI/UX Design -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-paint-brush text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> UI/UX Design </h3>
-                    <p class="text-gray-600 mb-4">Beautiful, intuitive interfaces designed to enhance user experience
-                        and drive engagement.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>User Research & Analysis</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Wireframing & Prototyping</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Interactive Design Systems</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- UI Development -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-code text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">App & Web Application Development </h3>
-                    <p class="text-gray-600 mb-4">Pixel-perfect implementation of designs with modern frameworks and
-                        best practices.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>React, Vue, Angular Implementation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Responsive Web Development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Performance Optimization</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- MERN Stack -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-database text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Enterprise Applications </h3>
-                    <p class="text-gray-600 mb-4">Full-stack JavaScript solutions with MongoDB, Express, React, and
-                        Node.js.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Custom Web Applications</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>RESTful API Development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Real-time Applications</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Python Full Stack -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fab fa-python text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> AI & ML Projects </h3>
-                    <p class="text-gray-600 mb-4">Powerful Ai with backend solutions with Django, Flask and frontend
-                        integration.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Django REST Framework</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Data Processing Pipelines</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>AI/ML Integration</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Graphic Design -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-palette text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Digital Solutions </h3>
-                    <p class="text-gray-600 mb-4">Visually stunning designs that communicate your brand's message
-                        effectively.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Brand Identity Systems</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Print & Digital Marketing Materials</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Illustration & Iconography</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Video/Animation -->
-                <div
-                    class="service-card bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition duration-300">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-film text-blue-600 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> VFX & Media </h3>
-                    <p class="text-gray-600 mb-4">Engaging animations and video content that captivates your audience.
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Explainer Videos</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>2D/3D Animation</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-circle text-blue-500 mr-2"></i>
-                            <span>Video Editing & Post-production</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-<section class="py-16 gradient-bg text-white">
-    <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div class="p-6">
-                <div class="text-5xl font-bold mb-3 counter-number" data-target="500" data-suffix="+">0</div>
-                <div class="text-xl">Graduates Employed</div>
-            </div>
-            <div class="p-6">
-                <div class="text-5xl font-bold mb-3 counter-number" data-target="98" data-suffix="%">0</div>
-                <div class="text-xl">Job Placement Rate</div>
-            </div>
-            <div class="p-6">
-                <div class="text-5xl font-bold mb-3 counter-number" data-target="150" data-suffix="+">0</div>
-                <div class="text-xl">Satisfied Clients</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Training Programs Section -->
-<section id="training" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Training Programs</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive courses designed to launch your tech career</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
-                    <i class="fas fa-paint-brush text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Diploma In UI/UX </h3>
-                    <h5 style="color: #2563eb;"> CTC 5 - 15 LPA</h5>
-                    <p class="text-gray-600 mb-4">Job Ready & Long Term Certification, 8-weeks intensive program
-                        covering research, wireframing, prototyping, and UI design principles.</p>
-
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Figma</span>
-                        <span
-                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Adobe
-                            XD</span>
-                        <span
-                            class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">Sketch</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 2 months</span>
-                        <a href="#" class="text-blue-600 font-medium hover:text-blue-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
-                    <i class="fas fa-code text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> PG In MERN Stack Development </h3>
-                    <h5 style="color: #2563eb;"> CTC 6 - 18 LPA</h5>
-                    <p class="text-gray-600 mb-4">12-weeks program teaching MongoDB, Express, React, and Node.js to
-                        build full-stack applications.</p>
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium mr-2">MongoDB</span>
-                        <span
-                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Express</span>
-                        <span
-                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">React</span>
-                        <span
-                            class="inline-block bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium ml-2">Node.js</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 3 months</span>
-                        <a href="#" class="text-green-600 font-medium hover:text-green-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-yellow-500 to-yellow-700 flex items-center justify-center">
-                    <i class="fab fa-python text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Ai + Python Full Stack</h3>
-                    <h5 style="color: #2563eb;"> CTC 6 - 21 LPA</h5>
-                    <p class="text-gray-600 mb-4">12-week course covering Django, Flask, databases, and frontend
-                        integration with JavaScript.</p>
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Django</span>
-                        <span
-                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium mr-2">Flask</span>
-                        <span
-                            class="inline-block bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full text-sm font-medium">PostgreSQL</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 3 months</span>
-                        <a href="#" class="text-yellow-600 font-medium hover:text-yellow-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-700 flex items-center justify-center">
-                    <i class="fas fa-laptop-code text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> UI + React </h3>
-                    <h5 style="color: #2563eb;"> CTC 4 - 20 LPA</h5>
-                    <p class="text-gray-600 mb-4">8-week course focusing on modern HTML, CSS, JavaScript and
-                        frameworks like React. </p>
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mr-2">HTML5</span>
-                        <span
-                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium mr-2">CSS3</span>
-                        <span
-                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
-                        <span
-                            class="inline-block bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">React</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 2 months</span>
-                        <a href="#" class="text-purple-600 font-medium hover:text-purple-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-red-500 to-red-700 flex items-center justify-center">
-                    <i class="fas fa-palette text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Graphic & Video Editing Professional </h3>
-                    <h5 style="color: #2563eb;"> CTC 5 - 15 LPA</h5>
-                    <p class="text-gray-600 mb-4">10-week course covering typography, layout, color theory, and
-                        Adobe Creative Suite.</p>
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Photoshop</span>
-                        <span
-                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Illustrator</span>
-                        <span
-                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">InDesign</span>
-                        <span
-                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">Adobe
-                            Premier Pro</span>
-                        <span
-                            class="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-medium m-2">
-                            Adobe After Effects </span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 3 months</span>
-                        <a href="#" class="text-red-600 font-medium hover:text-red-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect">
-                <div class="h-48 bg-gradient-to-r from-indigo-500 to-indigo-700 flex items-center justify-center">
-                    <i class="fas fa-film text-white text-6xl"></i>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3"> Diploma in Multimedia - 2D & 3D </h3>
-                    <h5 style="color: #2563eb;"> CTC 5 - 25 LPA</h5>
-                    <p class="text-gray-600 mb-4">14-week program teaching After Effects, Premiere Pro, and video
-                        production fundamentals.</p>
-                    <div class="mb-4">
-                        <span
-                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">After
-                            Effects</span>
-                        <span
-                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">Premiere
-                            Pro</span>
-                        <span
-                            class="inline-block bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium m-2">Cinema
-                            4D & Maya</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-500">Duration: 4 months</span>
-                        <a href="#" class="text-indigo-600 font-medium hover:text-indigo-800">Learn more →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        </div>
-</section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Students & Clients Say</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Success stories from our community</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/612d946c-46ce-49c5-add1-fc46422e5377.png"
-                                alt="Portrait of Sarah Johnson, a young female UI/UX designer smiling confidently"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
-                            <p class="text-blue-600 text-sm">UI/UX Designer at TechCorp</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"The UI/UX Design Masterclass completely transformed my career.
-                        The practical projects and industry insights helped me land my dream job just 2 weeks after
-                        completing the program."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b2507a29-3610-4ba0-b602-6f279a3c3c3d.png"
-                                alt="Portrait of Mark Davis, a mid-career professional looking thoughtful with glasses"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Mark Davis</h4>
-                            <p class="text-blue-600 text-sm">CEO, Digital Solutions Inc.</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"We've hired three graduates from TechNova's MERN stack
-                        program, and they've all been exceptional. The training produces developers who can hit the
-                        ground running with real-world projects."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9d4f4d9f-7bb0-4161-8c90-4eab8404b550.png"
-                                alt="Portrait of Priya Patel, a young graduate smiling proudly in professional attire"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Priya Patel</h4>
-                            <p class="text-blue-600 text-sm">Python Developer at DataWorks</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"Coming from an economics background, I never thought I could
-                        become a developer. The Python Full Stack course gave me all the skills I needed, plus career
-                        support that helped me land a great position."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Second Row of Testimonials -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1ac25daf-42e1-44f5-85c2-9c0fb9d84d38.png"
-                                alt="Portrait of Alex Chen, a motion graphics artist with creative hairstyle smiling"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Alex Chen</h4>
-                            <p class="text-blue-600 text-sm">Motion Designer at MediaPlus</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"The Motion Graphics course was incredibly comprehensive. We
-                        learned not just the tools but the principles behind great animation. I now lead a creative team
-                        at a top agency."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/26869ad1-ed60-485f-821d-a48fafca5e11.png"
-                                alt="Portrait of Jamal Williams, a senior developer smiling confidently"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Jamal Williams</h4>
-                            <p class="text-blue-600 text-sm">Senior UI Developer</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"After 6 months of self-teaching with mixed results, the UI
-                        Development Intensive gave me the structured learning path I needed. The portfolio projects were
-                        key to getting interviews."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card bg-white p-8 rounded-xl shadow-md border border-gray-100">
-                    <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0b713f21-87bd-4aaf-b8b3-82b7d822f31d.png"
-                                alt="Portrait of Rachel Green, a creative director with stylish glasses looking professional"
-                                class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800">Rachel Green</h4>
-                            <p class="text-blue-600 text-sm">Creative Director, BrandHouse</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 italic mb-5">"We've partnered with TechNova for both custom software
-                        solutions and hiring talent. Their team delivers exceptional quality and their graduates are
-                        among the best-prepared we've seen."</p>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white ">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Get In Touch</h2>
-                    <p class="text-gray-600">Have questions about our services or training programs? Reach out to us.
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden ">
-                    <div class="md:flex ">
-                        <div class="md:w-1/2 p-8 ">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-6">Contact Information</h3>
-
-                            <div class="flex items-start mb-6 " >
-                                <div
-                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1 ">
-                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Address</h4>
-                                    <!-- <p class="text-gray-600">2871 Speedway, Austin, TX 78715,  <br> United States </p>
-                                    <p class="text-gray-600"> ............................................................................. </p> -->
-                                    <p class="text-gray-600"> 301, Manemma Nilayam, KPHB 9th Phase,  JNTU, Hyderabad, 500085  <br> India </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start mb-6">
-                                <div
-                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                    <i class="fas fa-phone-alt text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Phone</h4>
-                                    <p class="text-gray-600"> For India: +91-9177059193 </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start mb-6">
-                                <div
-                                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
-                                    <i class="fas fa-envelope text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Email</h4>
-                                    <p class="text-gray-600"> massivemissionskills@gmail.com </p>
-                                </div>
-                            </div>
-
-                            <!-- <div class="mt-10">
-                                <h3 class="text-lg font-semibold text-gray-800 mb-4">Follow Us</h3>
-                                <div class="flex space-x-4">
-                                    <a href="#"
-                                        class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition duration-300">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center text-white hover:bg-blue-500 transition duration-300">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition duration-300">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="#"
-                                        class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white hover:bg-blue-800 transition duration-300">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </div>
-                            </div> -->
-                        </div>
-
-                        <!-- <div class="md:w-1/2 bg-white p-8">
-                            <h3 class="text-lg font-semibold text-gray-800 mb-6">Send Us a Message</h3>
-
-                            <form>
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Your
-                                        Name</label>
-                                    <input type="text" id="name"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email
-                                        Address</label>
-                                    <input type="email" id="email"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="subject"
-                                        class="block text-gray-700 text-sm font-medium mb-2">Subject</label>
-                                    <select id="subject"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                        <option value="">Select a subject</option>
-                                        <option value="training">Training Programs</option>
-                                        <option value="services">Professional Services</option>
-                                        <option value="partnership">Partnership</option>
-                                        <option value="careers">Careers</option>
-                                        <option value="other">Other Inquiry</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-6">
-                                    <label for="message"
-                                        class="block text-gray-700 text-sm font-medium mb-2">Message</label>
-                                    <textarea id="message" rows="4"
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                                </div>
-
-                                <button type="submit"
-                                    class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Send
-                                    Message</button>
-                            </form>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="mb-8 md:mb-0">
-                     <h3 style="font-family:system-ui">Massive Solutions </h3>
-                    <!-- <img src="./assets/ms.png"
-                        alt="TechNova Solutions logo in white version on dark background" class="h-12 mb-4"> -->
-                    <p class="text-gray-400 mb-4"> Massive Solutions and technology training for the digital
-                        age.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
-                        <li><a href="#training" class="text-gray-400 hover:text-white">Training Programs</a></li>
-                        <li><a href="#partners" class="text-gray-400 hover:text-white">Hiring Partners</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Training Programs</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">UI/UX Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">UI Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">MERN Stack</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Python Full Stack</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Graphic Design</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Motion Graphics</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt text-gray-400 mr-2 mt-1"></i>
-                            <!-- <span class="text-gray-400">2871 Speedway, Austin, TX 78715 , United States </span> -->
-                        
-                            <span class="text-gray-400">301, Manemma Nilayam, KPHB 9th Phase,  JNTU, Hyderabad, 500085 , India </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-phone-alt text-gray-400 mr-2 mt-1"></i>
-                            <span class="text-gray-400"> For India : +91-9177059193 </span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-envelope text-gray-400 mr-2 mt-1"></i>
-                            <span class="text-gray-400">massivemissionskills@gmail.com</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Massive Solutions. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-
-     
-    document.addEventListener('DOMContentLoaded', () => {
-        const counterNumbers = document.querySelectorAll('.counter-number');
-        const animationDuration = 2000; // milliseconds (2 seconds)
-        const frameDuration = 1000 / 60; // approximately 60 frames per second
-
-        const animateCounter = (entry) => {
-            if (entry.isIntersecting) {
-                // If the section is visible, start the animation
-                const counterElement = entry.target;
-                const targetValue = parseInt(counterElement.getAttribute('data-target'));
-                const suffix = counterElement.getAttribute('data-suffix') || ''; // Get suffix or empty string
-                const startValue = 0;
-                let startTime = null;
-
-                const updateCount = (currentTime) => {
-                    if (!startTime) startTime = currentTime;
-                    const progress = (currentTime - startTime) / animationDuration;
-
-                    if (progress < 1) {
-                        const currentValue = Math.min(targetValue, startValue + progress * (targetValue - startValue));
-                        counterElement.textContent = Math.floor(currentValue) + suffix;
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        // Ensure the final value is exactly the target
-                        counterElement.textContent = targetValue + suffix;
-                        // Stop observing once animation is done
-                        observer.unobserve(counterElement);
-                    }
-                };
-
-                requestAnimationFrame(updateCount);
-            }
-        };
-
-        // Create an Intersection Observer to trigger animation when section is in view
-        const observerOptions = {
-            root: null, // relative to the viewport
-            rootMargin: '0px',
-            threshold: 0.5 // trigger when 50% of the element is visible
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry);
-                }
-            });
-        }, observerOptions);
-
-        // Observe each counter element
-        counterNumbers.forEach(counter => {
-            observer.observe(counter);
-        });
-    });
+/* ===== 3D network + reveal ===== */
+function initNet(){
+ const c=$("#net");if(!c)return;
+ const x=c.getContext("2d"),dpr=Math.min(devicePixelRatio||1,2),N=110,P=[],E=[];
+ let W,H,t=0,mx=0,my=0;
+ for(let i=0;i<N;i++){const k=i+.5,ph=Math.acos(1-2*k/N),th=Math.PI*(1+Math.sqrt(5))*k;P.push([Math.cos(th)*Math.sin(ph),Math.sin(th)*Math.sin(ph),Math.cos(ph)])}
+ for(let i=0;i<N;i++)for(let j=i+1;j<N;j++)if(Math.hypot(P[i][0]-P[j][0],P[i][1]-P[j][1],P[i][2]-P[j][2])<.5)E.push([i,j]);
+ const size=()=>{const r=c.getBoundingClientRect();W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)};
+ size();addEventListener("resize",size);
+ c.addEventListener("pointermove",e=>{const r=c.getBoundingClientRect();mx=(e.clientX-r.left)/r.width-.5;my=(e.clientY-r.top)/r.height-.5});
+ const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
+ function frame(){
+  if(!c.isConnected){removeEventListener("resize",size);return}
+  t+=.006;
+  const ay=t+mx*1.4,ax=.3+my*.9,R=Math.min(W,H)*.36,cy=Math.cos(ay),sy=Math.sin(ay),cx=Math.cos(ax),sx=Math.sin(ax);
+  const Q=P.map(p=>{const X=p[0]*cy+p[2]*sy,Z0=-p[0]*sy+p[2]*cy,Y=p[1]*cx-Z0*sx,Z=p[1]*sx+Z0*cx,s=2.6/(2.6+Z);return[W/2+X*R*s,H/2+Y*R*s,Z,s]});
+  x.clearRect(0,0,W,H);
+  x.lineWidth=1;
+  E.forEach(([i,j])=>{const a=Q[i],b=Q[j],al=.06+.3*Math.max(0,(a[3]+b[3]-1.3)/1.9);x.strokeStyle=`rgba(77,214,232,${al})`;x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(b[0],b[1]);x.stroke()});
+  Q.forEach(q=>{x.fillStyle=`rgba(210,235,255,${Math.min(1,Math.max(.25,(q[3]-.6)))})`;x.beginPath();x.arc(q[0],q[1],1+1.8*q[3],0,6.283);x.fill()});
+  for(let k=0;k<7;k++){const u=t*2+k*.37,e=E[(k*29+Math.floor(u)*17)%E.length],a=Q[e[0]],b=Q[e[1]],p=u%1,px=a[0]+(b[0]-a[0])*p,py=a[1]+(b[1]-a[1])*p;
+   x.fillStyle="rgba(124,140,255,.35)";x.beginPath();x.arc(px,py,8,0,6.283);x.fill();x.fillStyle="#fff";x.beginPath();x.arc(px,py,2.6,0,6.283);x.fill()}
+  if(!still)requestAnimationFrame(frame);
+ }
+ frame();
+}
+function reveal(){
+ if(matchMedia("(prefers-reduced-motion:reduce)").matches||!("IntersectionObserver" in window))return;
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.08});
+ document.querySelectorAll("main section:not(.dark) .wrap").forEach(el=>{el.classList.add("rv");io.observe(el)});
+}
+/* ===== SDE program (editable) ===== */
+const SDE={title:"SDE Python Full Stack Development with AI",
+modules:[["Programming and DSA","Python, data types, functions, OOP, exception and file handling, collections, recursion, searching, sorting, stacks, queues, linked lists, trees, hash maps, time and space complexity."],
+["Frontend development","HTML5, CSS3, JavaScript ES6+, React.js, JSX, props, state, Hooks, Context API, useReducer, React Router, forms, API integration, Tailwind CSS, responsive design."],
+["Backend development","Python, FastAPI, REST APIs, GraphQL, CRUD, HTTP methods and status codes, JSON, authentication, authorization, JWT, pagination and validation."],
+["Database management","PostgreSQL, SQL, joins, subqueries, aggregates, constraints, keys and relationships, indexes, transactions, normalization, Django ORM."],
+["Developer tools","VS Code, Git, GitHub, Linux commands, terminal, virtual environments, pip, requirements.txt, environment variables, debugging, code reviews and pull requests."],
+["AI application development","LLM fundamentals, prompt engineering, OpenAI API, structured outputs, function calling, embeddings, vector search, RAG fundamentals, LangChain basics, AI-powered app integration."],
+["Testing and deployment","Pytest, Postman, Swagger/OpenAPI, API, unit and integration testing, Docker fundamentals, GitHub Actions basics, deployment to AWS or another cloud platform."],
+["SDE engineering fundamentals","OOP, SOLID principles, basic design patterns, LLD fundamentals, system design basics, networking, HTTP, DNS, caching, database design, security basics, performance optimization."]],
+prep:["DSA practice with coding problems and complexity analysis","Python coding rounds and SQL interview questions","Basic machine coding and API implementation","OOP and LLD interview questions","HTTP, operating systems, databases and networking fundamentals","Project deep dives, debugging exercises and mock interviews"],
+who:[["Career gap","Restart your engineering career with a structured path."],["Non-IT to IT switchers","Move into software with fundamentals first."],["Working professionals","Build skills for better opportunities."],["Students","Prepare for placement interviews with real projects."]]};
+function sdePage(){const d=SDE;return `
+<section><div class="wrap"><h1>${d.title}</h1>
+<p class="lead">Master Python, DSA, full-stack development and AI application building, with interview preparation and mock interviews.</p>
+<div class="rows grid"><div><span class="tag">Option 1</span><h3>Regular fee</h3><p><strong>₹55,999</strong>, paid upfront.</p></div><div><span class="tag">Option 2</span><h3>Pay after placement</h3><p>Pre-registration enrolment fee <strong>₹20,999</strong>, then <strong>₹31,999</strong> after placement. Total ₹52,998.</p></div></div><p class="note">Taxes, what counts as "placement", the payment deadline after placement and the refund terms for the pre-registration fee: ${TBC}. Placement is not guaranteed.</p>
+${cta("Enrol now","#/contact?topic=Software%20Engineering",1)}${cta("Ask a question","#/contact?topic=Software%20Engineering")}</div></section>
+${sec("What you will learn",`<div class="rows">${d.modules.map(m=>`<div><h3>${m[0]}</h3><p>${m[1]}</p></div>`).join("")}</div>`,1)}
+${sec("Projects expected from an SDE candidate",`<div class="rows grid"><div><h3>10 mini projects</h3><p>Reinforce each module.</p></div><div><h3>4 capstone projects</h3><p>Full applications used end to end.</p></div><div><h3>2 AI application projects</h3><p>LLM-powered apps.</p></div></div><p class="note">Because of confidentiality, these projects are not shown publicly. You get access once your enrolment is complete.</p>`)}
+${sec("Interview preparation",`<ul class="chk">${li(d.prep)}</ul>`,1)}
+${sec("Who is mentoring you",`<div class="rows"><div><h3>Software Architect, 7+ years of IT experience</h3><p>Experience at product and service companies, including Adobe and Amazon, building real-time applications as a Software Architect.</p></div></div><p class="note">Mentor name and verifiable profile link: ${TBC}.</p>`)}
+${sec("Internship and career support",`<ul class="chk"><li>Internship opportunities of 6 to 12 months</li><li>Resume building</li><li>Placement assistance</li><li>Mock interviews</li></ul><p class="note">Packages vary with individual skills, performance and available openings. We do not guarantee jobs, salaries or any specific package.</p>`,1)}
+${sec("Who this is for",`<div class="rows grid">${d.who.map(w=>`<div><h3>${w[0]}</h3><p>${w[1]}</p></div>`).join("")}</div>`)}
+${sec("Program details",`<div class="rows"><div><h3>Prerequisites, duration and format</h3><p>${TBC}.</p></div><div><h3>Payment and refunds</h3><p>Fees are shown above. Payment method and refund policy: ${TBC}.</p></div></div>`,1)}
+${closer("Ready to start?","Enrol or ask a question","#/contact?topic=Software%20Engineering")}`}
+/* ===== router ===== */
+function route(){
+ const path=(location.hash.slice(1).split("?")[0])||"/";
+ const pg=PAGES[path]?path:"/";
+ $("#main").innerHTML=PAGES[pg]();
+ document.title=(pg=="/"?"":ROUTES[pg]+" | ")+"Massive Mission Solutions";
+ document.querySelectorAll("#navlist a").forEach(a=>a.toggleAttribute("aria-current",a.getAttribute("href")=="#"+pg));
+ document.querySelectorAll(".dd").forEach(d=>{d.querySelector("button").classList.toggle("on",!!d.querySelector("[aria-current]"));d.classList.remove("open");d.querySelector("button").setAttribute("aria-expanded","false")});
+ $("#nav").classList.remove("open");$("#menu").setAttribute("aria-expanded","false");
+ scrollTo(0,0);$("#main").focus({preventScroll:true});
+ const f=$("#f");if(f)f.addEventListener("submit",submit);
+ initNet();reveal();
+}
+function submit(e){e.preventDefault();
+ const v=id=>$("#"+id).value.trim();let ok=true;
+ const chk=(c,id,m)=>{$("#"+id).textContent=c?"":m;if(!c)ok=false};
+ chk(v("n").length>1,"e1","Enter your name.");
+ chk(/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("e")),"e2","Enter a valid email address.");
+ chk(v("m").length>=10,"e3","Write at least 10 characters.");
+ if(!ok)return;
+ const txt=`Hi, I'm ${v("n")} (${v("e")}). Topic: ${v("t")}.\n${v("m")}`;
+ const url="https://wa.me/"+SITE.whatsapp+"?text="+encodeURIComponent(txt);
+ window.open(url,"_blank","noopener");
+ const o=$("#ok");o.hidden=false;o.innerHTML=`WhatsApp should open with your message ready to send. If it does not, <a href="${url}" target="_blank" rel="noopener">tap here</a>.`;
+}
+const NAV=["/",["Training",["/ai-engineering","/sde"]],"/ai-solutions","/projects","/about","/insights","/contact"];
+const A=p=>`<a href="#${p}">${ROUTES[p]}</a>`;
+$("#navlist").innerHTML=NAV.map(n=>typeof n=="string"?`<li>${A(n)}</li>`:`<li class="dd"><button type="button" aria-expanded="false" aria-haspopup="true">${n[0]}</button><ul class="sub">${n[1].map(p=>`<li>${A(p)}</li>`).join("")}</ul></li>`).join("");
+{const dd=document.querySelector(".dd"),db=dd.querySelector("button"),shut=()=>{dd.classList.remove("open");db.setAttribute("aria-expanded","false")};
+db.onclick=()=>{const o=dd.classList.toggle("open");db.setAttribute("aria-expanded",o)};
+document.addEventListener("click",e=>{if(!dd.contains(e.target))shut()});
+dd.addEventListener("keydown",e=>{if(e.key=="Escape"){shut();db.focus()}});}
+$("#foot").innerHTML=Object.entries(ROUTES).slice(1,5).map(([p,t])=>`<a href="#${p}">${t}</a>`).join("");
+$("#mail").textContent=SITE.email;$("#mail").href="mailto:"+SITE.email;
+$("#menu").onclick=()=>{const o=$("#nav").classList.toggle("open");$("#menu").setAttribute("aria-expanded",o)};
+addEventListener("hashchange",route);route();
 </script>
-
 </body>
-
 </html>
